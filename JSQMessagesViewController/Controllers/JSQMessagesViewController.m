@@ -564,7 +564,8 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     cell.cellTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellTopLabelAtIndexPath:indexPath];
     cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
     cell.cellBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellBottomLabelAtIndexPath:indexPath];
-
+    cell.cellSideBottomLabel.attributedText = [[NSAttributedString alloc]initWithString:@"既読"];
+    
     CGFloat bubbleTopLabelInset = (avatarImageDataSource != nil) ? 60.0f : 15.0f;
 
     if (isOutgoingMessage) {

@@ -112,6 +112,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (weak, nonatomic, readonly, nullable) JSQMessagesLabel *cellBottomLabel;
 
+//既読ラベル
+@property (weak, nonatomic, readonly, nullable) JSQMessagesLabel *cellSideBottomLabel;
+
 /**
  *  Returns the text view of the cell. This text view contains the message body text.
  *
