@@ -575,6 +575,7 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
         [cell.favoriteButton setImage:buttonImages[0] forState:UIControlStateNormal];
         [cell.favoriteButton setImage:buttonImages[1] forState:UIControlStateSelected];
     }
+    [cell.favoriteButton addTarget:self action:@selector(favoriteButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
     
     CGFloat bubbleTopLabelInset = (avatarImageDataSource != nil) ? 60.0f : 15.0f;
 
@@ -593,6 +594,10 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     [self collectionView:collectionView accessibilityForCell:cell indexPath:indexPath message:messageItem];
 
     return cell;
+}
+
+- (void)favoriteButtonPushed:(UIButton *)button {
+    button.selected = !button.selected;
 }
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView
