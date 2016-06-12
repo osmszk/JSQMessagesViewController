@@ -34,6 +34,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *messageBubbleTopLabel;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellBottomLabel;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellSideBottomLabel;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 
 @property (weak, nonatomic) IBOutlet UIView *messageBubbleContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *messageBubbleImageView;
@@ -140,6 +141,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     _messageBubbleTopLabel = nil;
     _cellBottomLabel = nil;
     _cellSideBottomLabel = nil;
+    _favoriteButton = nil;
 
     _textView = nil;
     _messageBubbleImageView = nil;

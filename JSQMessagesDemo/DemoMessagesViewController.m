@@ -519,6 +519,13 @@
     return nil;
 }
 
+
+- (nullable NSArray *)collectionView:(JSQMessagesCollectionView *)collectionView favoriteButtonImages:(NSIndexPath *)indexPath
+{
+    return @[[UIImage imageNamed:@"ic_star_off"],[UIImage imageNamed:@"ic_star_on"]];
+}
+
+
 #pragma mark - UICollectionView DataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -654,6 +661,8 @@
 {
     return 0.0f;
 }
+
+
 
 #pragma mark - Responding to collection view tap events
 

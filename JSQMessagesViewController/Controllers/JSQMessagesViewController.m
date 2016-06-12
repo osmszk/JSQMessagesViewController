@@ -491,6 +491,11 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     return nil;
 }
 
+- (NSArray *)collectionView:(JSQMessagesCollectionView *)collectionView favoriteButtonImages:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
 #pragma mark - Collection view data source
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -565,6 +570,11 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
     cell.cellBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellBottomLabelAtIndexPath:indexPath];
     cell.cellSideBottomLabel.attributedText = [[NSAttributedString alloc]initWithString:@"既読"];
+    NSArray *buttonImages = [collectionView.dataSource collectionView:collectionView favoriteButtonImages:indexPath];
+    if (buttonImages.count > 1) {
+        [cell.favoriteButton setImage:buttonImages[0] forState:UIControlStateNormal];
+        [cell.favoriteButton setImage:buttonImages[1] forState:UIControlStateSelected];
+    }
     
     CGFloat bubbleTopLabelInset = (avatarImageDataSource != nil) ? 60.0f : 15.0f;
 
