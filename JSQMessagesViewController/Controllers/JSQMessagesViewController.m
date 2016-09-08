@@ -491,6 +491,11 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     return nil;
 }
 
+- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellSideBottomLabel:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
 - (NSArray *)collectionView:(JSQMessagesCollectionView *)collectionView favoriteButtonImages:(NSIndexPath *)indexPath
 {
     return nil;
@@ -569,7 +574,8 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     cell.cellTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellTopLabelAtIndexPath:indexPath];
     cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
     cell.cellBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellBottomLabelAtIndexPath:indexPath];
-    cell.cellSideBottomLabel.attributedText = [[NSAttributedString alloc]initWithString:@"既読"];
+    cell.cellSideBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellSideBottomLabel:indexPath];
+    
     NSArray *buttonImages = [collectionView.dataSource collectionView:collectionView favoriteButtonImages:indexPath];
     if (buttonImages.count > 1) {
         [cell.favoriteButton setImage:buttonImages[0] forState:UIControlStateNormal];

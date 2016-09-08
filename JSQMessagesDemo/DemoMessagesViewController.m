@@ -519,6 +519,14 @@
     return nil;
 }
 
+- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellSideBottomLabel:(NSIndexPath *)indexPath
+{
+    if (indexPath.item % 3 == 1) {
+        return [[NSAttributedString alloc]initWithString:@"既読"];
+    } else {
+        return nil;
+    }
+}
 
 - (nullable NSArray *)collectionView:(JSQMessagesCollectionView *)collectionView favoriteButtonImages:(NSIndexPath *)indexPath
 {
