@@ -522,7 +522,7 @@
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellSideBottomLabel:(NSIndexPath *)indexPath
 {
     if (indexPath.item % 3 == 1) {
-        return [[NSAttributedString alloc]initWithString:@"既読"];
+        return [[NSAttributedString alloc]initWithString:@"既読22"];
     } else {
         return nil;
     }

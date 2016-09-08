@@ -88,12 +88,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="既読" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmI-9k-z21" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="7" y="116" width="30" height="16"/>
+                        <rect key="frame" x="4" y="116" width="34" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="7nM-qv-a0y"/>
-                            <constraint firstAttribute="width" constant="30" id="Znw-2X-Qrw"/>
+                            <constraint firstAttribute="width" constant="34" id="Znw-2X-Qrw"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -103,7 +103,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="7Uc-dI-YDD" secondAttribute="trailing" id="1v4-5s-XmK"/>
                 <constraint firstItem="2zh-vR-QJW" firstAttribute="top" secondItem="p52-YN-yLu" secondAttribute="bottom" id="3Wx-g0-fTc"/>
-                <constraint firstItem="2zh-vR-QJW" firstAttribute="leading" secondItem="ZmI-9k-z21" secondAttribute="trailing" constant="3" id="6sn-2o-mP2"/>
+                <constraint firstItem="2zh-vR-QJW" firstAttribute="leading" secondItem="ZmI-9k-z21" secondAttribute="trailing" constant="2" id="6sn-2o-mP2"/>
                 <constraint firstAttribute="trailing" secondItem="jxM-YD-sVG" secondAttribute="trailing" id="AwY-g7-f1T"/>
                 <constraint firstItem="jxM-YD-sVG" firstAttribute="top" secondItem="23f-xH-rkY" secondAttribute="top" id="HYT-Tw-whz"/>
                 <constraint firstAttribute="trailing" secondItem="X89-B1-aAd" secondAttribute="trailing" id="KLt-Ix-wDa"/>

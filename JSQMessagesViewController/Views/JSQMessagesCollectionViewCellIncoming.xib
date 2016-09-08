@@ -88,12 +88,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="既読" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJT-HO-MHg" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="282" y="115" width="30" height="16"/>
+                        <rect key="frame" x="282" y="116" width="34" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="oRP-zV-8Bx"/>
-                            <constraint firstAttribute="width" constant="30" id="t9J-cA-KUw"/>
+                            <constraint firstAttribute="width" constant="34" id="t9J-cA-KUw"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -125,7 +125,7 @@
                 <constraint firstItem="Da1-09-wR4" firstAttribute="leading" secondItem="4lh-CK-yVn" secondAttribute="leading" id="jiu-B4-TSD"/>
                 <constraint firstAttribute="bottom" secondItem="UPz-5x-c1T" secondAttribute="bottom" id="nsK-Gh-M3Z"/>
                 <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="bottom" id="s8G-Je-7GA"/>
-                <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="fJT-HO-MHg" secondAttribute="bottom" constant="3" id="uHx-qh-sgP"/>
+                <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="fJT-HO-MHg" secondAttribute="bottom" constant="2" id="uHx-qh-sgP"/>
             </constraints>
             <size key="customSize" width="317" height="245"/>
             <connections>
