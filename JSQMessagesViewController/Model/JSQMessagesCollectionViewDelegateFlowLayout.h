@@ -120,6 +120,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView
                 header:(JSQMessagesLoadEarlierHeaderView *)headerView didTapLoadEarlierMessagesButton:(UIButton *)sender;
 
+//お気に入りボタンアクション
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView didPushFavoriteButton:(UIButton *)button atIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 NS_ASSUME_NONNULL_END

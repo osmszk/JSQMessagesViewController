@@ -501,6 +501,11 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     return nil;
 }
 
+- (BOOL)collectionView:(JSQMessagesCollectionView *)collectionView isFavoriteAtIndexPath:(NSIndexPath *)indexPath
+{
+    return false;
+}
+
 #pragma mark - Collection view data source
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -574,14 +579,21 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     cell.cellTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellTopLabelAtIndexPath:indexPath];
     cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
     cell.cellBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellBottomLabelAtIndexPath:indexPath];
+    //既読ラベル
     cell.cellSideBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellSideBottomLabel:indexPath];
     
+    //お気に入りボタン
     NSArray *buttonImages = [collectionView.dataSource collectionView:collectionView favoriteButtonImages:indexPath];
-    if (buttonImages.count > 1) {
+    if (buttonImages.count == 2) {
         [cell.favoriteButton setImage:buttonImages[0] forState:UIControlStateNormal];
         [cell.favoriteButton setImage:buttonImages[1] forState:UIControlStateSelected];
+    } else if (buttonImages.count > 2) {
+        [cell.favoriteButton setImage:buttonImages[0] forState:UIControlStateNormal];
+        [cell.favoriteButton setImage:buttonImages[1] forState:UIControlStateHighlighted];
+        [cell.favoriteButton setImage:buttonImages[2] forState:UIControlStateSelected];
     }
-    [cell.favoriteButton addTarget:self action:@selector(favoriteButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    cell.favoriteButton.selected = [collectionView.dataSource collectionView:collectionView isFavoriteAtIndexPath:indexPath];
     
     CGFloat bubbleTopLabelInset = (avatarImageDataSource != nil) ? 60.0f : 15.0f;
 
@@ -600,10 +612,6 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     [self collectionView:collectionView accessibilityForCell:cell indexPath:indexPath message:messageItem];
 
     return cell;
-}
-
-- (void)favoriteButtonPushed:(UIButton *)button {
-    button.selected = !button.selected;
 }
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView
@@ -752,6 +760,8 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView
  didTapCellAtIndexPath:(NSIndexPath *)indexPath
          touchLocation:(CGPoint)touchLocation { }
+
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView didPushFavoriteButton:(UIButton *)button atIndexPath:(NSIndexPath *)indexPath{ }
 
 #pragma mark - Input toolbar delegate
 

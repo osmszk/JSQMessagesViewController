@@ -74,6 +74,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)messagesCollectionViewCell:(JSQMessagesCollectionViewCell *)cell didPerformAction:(SEL)action withSender:(id)sender;
 
+//お気に入りボタンアクション
+- (void)messagesCollectionViewCellDidPushFavoriteButton:(JSQMessagesCollectionViewCell *)cell;
+
 @end
 
 

@@ -131,6 +131,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
     [self addGestureRecognizer:tap];
     self.tapGestureRecognizer = tap;
+    
+    [self.favoriteButton addTarget:self action:@selector(didPushFavoriteButton:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)dealloc
@@ -393,6 +395,10 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     }
     
     return NO;
+}
+
+- (void)didPushFavoriteButton:(UIButton *)button {
+    [self.delegate messagesCollectionViewCellDidPushFavoriteButton:self];
 }
 
 @end

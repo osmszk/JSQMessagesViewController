@@ -156,8 +156,11 @@ NS_ASSUME_NONNULL_BEGIN
 /* 既読ラベル */
 - (nullable NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellSideBottomLabel:(NSIndexPath *)indexPath;
 
-//お気に入りボタン画像 normal画像とselect画像をかえす
+/* お気に入りボタン画像 2つ:normal画像とselect画像をかえす 3つ:normal,highlighted,selected */
 - (nullable NSArray *)collectionView:(JSQMessagesCollectionView *)collectionView favoriteButtonImages:(NSIndexPath *)indexPath;
+
+//お気に入りか？
+- (BOOL)collectionView:(JSQMessagesCollectionView *)collectionView isFavoriteAtIndexPath:(NSIndexPath *)indexPath;
 
 
 @end

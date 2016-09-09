@@ -533,6 +533,10 @@
     return @[[UIImage imageNamed:@"ic_star_off"],[UIImage imageNamed:@"ic_star_on"]];
 }
 
+- (BOOL)collectionView:(JSQMessagesCollectionView *)collectionView isFavoriteAtIndexPath:(NSIndexPath *)indexPath
+{
+    return indexPath.row % 3 == 1;
+}
 
 #pragma mark - UICollectionView DataSource
 
@@ -693,6 +697,12 @@
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapCellAtIndexPath:(NSIndexPath *)indexPath touchLocation:(CGPoint)touchLocation
 {
     NSLog(@"Tapped cell at %@!", NSStringFromCGPoint(touchLocation));
+}
+
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView didPushFavoriteButton:(UIButton *)button atIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Pushed FavoriteButton! button %d",button.selected);
+    button.selected = !button.selected;
 }
 
 #pragma mark - JSQMessagesComposerTextViewPasteDelegate methods

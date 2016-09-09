@@ -183,4 +183,13 @@ forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                        withSender:sender];
 }
 
+- (void)messagesCollectionViewCellDidPushFavoriteButton:(JSQMessagesCollectionViewCell *)cell
+{
+    NSIndexPath *indexPath = [self indexPathForCell:cell];
+    if (indexPath == nil) {
+        return;
+    }
+    [self.delegate collectionView:self didPushFavoriteButton:cell.favoriteButton atIndexPath:indexPath];
+}
+
 @end
