@@ -88,20 +88,30 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="既読" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJT-HO-MHg" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="282" y="116" width="34" height="16"/>
+                        <rect key="frame" x="282" y="118" width="34" height="14"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="16" id="oRP-zV-8Bx"/>
+                            <constraint firstAttribute="height" constant="14" id="oRP-zV-8Bx"/>
                             <constraint firstAttribute="width" constant="34" id="t9J-cA-KUw"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTs-Br-dMh">
-                        <rect key="frame" x="282" y="103" width="28" height="28"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88:88" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g6-NS-48y" customClass="JSQMessagesLabel">
+                        <rect key="frame" x="284" y="118" width="34" height="14"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="28" id="A08-AM-NSw"/>
-                            <constraint firstAttribute="width" constant="28" id="txL-FE-jza"/>
+                            <constraint firstAttribute="height" constant="14" id="D1H-Mp-6TE"/>
+                            <constraint firstAttribute="width" constant="34" id="n0s-oQ-MqP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTs-Br-dMh">
+                        <rect key="frame" x="285" y="94" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="A08-AM-NSw"/>
+                            <constraint firstAttribute="width" constant="24" id="txL-FE-jza"/>
                         </constraints>
                     </button>
                 </subviews>
@@ -110,14 +120,16 @@
             <constraints>
                 <constraint firstItem="UPz-5x-c1T" firstAttribute="leading" secondItem="4lh-CK-yVn" secondAttribute="leading" id="54r-MX-MGW"/>
                 <constraint firstAttribute="trailing" secondItem="UPz-5x-c1T" secondAttribute="trailing" id="G3U-h0-DWS"/>
+                <constraint firstItem="0g6-NS-48y" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="trailing" constant="4" id="KKF-qt-Vf4"/>
                 <constraint firstAttribute="trailing" secondItem="afj-rd-iNv" secondAttribute="trailing" id="Ka4-Dy-jCS"/>
                 <constraint firstItem="afj-rd-iNv" firstAttribute="leading" secondItem="4lh-CK-yVn" secondAttribute="leading" id="OnD-mZ-QtR"/>
-                <constraint firstItem="HTs-Br-dMh" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="trailing" constant="2" id="QeJ-RS-A95"/>
+                <constraint firstItem="HTs-Br-dMh" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="trailing" constant="5" id="QeJ-RS-A95"/>
                 <constraint firstItem="Ufa-bF-l1Y" firstAttribute="leading" secondItem="4lh-CK-yVn" secondAttribute="leading" id="Z5z-m3-8Ne"/>
                 <constraint firstItem="afj-rd-iNv" firstAttribute="top" secondItem="4lh-CK-yVn" secondAttribute="top" id="ZG9-2M-N52"/>
                 <constraint firstAttribute="trailing" secondItem="Ufa-bF-l1Y" secondAttribute="trailing" id="cWQ-1Q-xOA"/>
-                <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="HTs-Br-dMh" secondAttribute="bottom" constant="3" id="d94-3F-hNq"/>
+                <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="HTs-Br-dMh" secondAttribute="bottom" constant="16" id="d94-3F-hNq"/>
                 <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="Da1-09-wR4" secondAttribute="bottom" id="dDB-B0-c6J"/>
+                <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="0g6-NS-48y" secondAttribute="bottom" constant="2" id="epH-Wu-Hkd"/>
                 <constraint firstItem="fJT-HO-MHg" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="trailing" constant="2" id="h4N-Sl-dhr"/>
                 <constraint firstItem="Ufa-bF-l1Y" firstAttribute="top" secondItem="afj-rd-iNv" secondAttribute="bottom" id="i9Y-sV-v6b"/>
                 <constraint firstItem="btS-p8-B7Z" firstAttribute="leading" secondItem="Da1-09-wR4" secondAttribute="trailing" constant="2" id="j0I-pm-eex"/>
@@ -136,6 +148,7 @@
                 <outlet property="cellBottomLabel" destination="UPz-5x-c1T" id="MKm-hp-T6v"/>
                 <outlet property="cellBottomLabelHeightConstraint" destination="xPR-Ph-Ze9" id="nvV-Tk-AIs"/>
                 <outlet property="cellSideBottomLabel" destination="fJT-HO-MHg" id="V3w-G1-tHJ"/>
+                <outlet property="cellTimeLabel" destination="0g6-NS-48y" id="vjz-tN-agj"/>
                 <outlet property="cellTopLabel" destination="afj-rd-iNv" id="bTd-4q-U7e"/>
                 <outlet property="cellTopLabelHeightConstraint" destination="fKS-MR-YPI" id="YWd-Rd-qSL"/>
                 <outlet property="favoriteButton" destination="HTs-Br-dMh" id="6MW-f8-85h"/>

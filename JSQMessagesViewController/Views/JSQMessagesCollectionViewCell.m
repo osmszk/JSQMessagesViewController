@@ -33,7 +33,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellTopLabel;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *messageBubbleTopLabel;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellBottomLabel;
-@property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellSideBottomLabel;
+@property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellSideBottomLabel;//既読ラベル
+@property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellTimeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 
 @property (weak, nonatomic) IBOutlet UIView *messageBubbleContainerView;
@@ -143,6 +144,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     _messageBubbleTopLabel = nil;
     _cellBottomLabel = nil;
     _cellSideBottomLabel = nil;
+    _cellTimeLabel = nil;
     _favoriteButton = nil;
 
     _textView = nil;
@@ -165,6 +167,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.messageBubbleTopLabel.text = nil;
     self.cellBottomLabel.text = nil;
     self.cellSideBottomLabel.text = nil;
+    self.cellTimeLabel.text = nil;
 
     self.textView.dataDetectorTypes = UIDataDetectorTypeNone;
     self.textView.text = nil;
@@ -288,6 +291,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.messageBubbleTopLabel.backgroundColor = backgroundColor;
     self.cellBottomLabel.backgroundColor = backgroundColor;
     self.cellSideBottomLabel.backgroundColor = backgroundColor;
+    self.cellTimeLabel.backgroundColor = backgroundColor;
 
     self.messageBubbleImageView.backgroundColor = backgroundColor;
     self.avatarImageView.backgroundColor = backgroundColor;

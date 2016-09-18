@@ -117,6 +117,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 //[オリジナル]既読ラベル
 @property (weak, nonatomic, readonly, nullable) JSQMessagesLabel *cellSideBottomLabel;
+//[オリジナル]時間ラベル
+@property (weak, nonatomic, readonly, nullable) JSQMessagesLabel *cellTimeLabel;
 //[オリジナル]お気に入りボタン
 @property (weak, nonatomic, readonly, nullable) UIButton *favoriteButton;
 

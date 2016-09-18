@@ -496,6 +496,11 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     return nil;
 }
 
+- (nullable NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTimeLabel:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
 - (NSArray *)collectionView:(JSQMessagesCollectionView *)collectionView favoriteButtonImages:(NSIndexPath *)indexPath
 {
     return nil;
@@ -581,6 +586,8 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     cell.cellBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellBottomLabelAtIndexPath:indexPath];
     //既読ラベル
     cell.cellSideBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellSideBottomLabel:indexPath];
+    //時間ラベル
+    cell.cellTimeLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellTimeLabel:indexPath];
     
     //お気に入りボタン
     NSArray *buttonImages = [collectionView.dataSource collectionView:collectionView favoriteButtonImages:indexPath];

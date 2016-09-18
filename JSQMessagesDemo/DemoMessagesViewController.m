@@ -528,6 +528,11 @@
     }
 }
 
+- (nullable NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTimeLabel:(NSIndexPath *)indexPath
+{
+    return [[NSAttributedString alloc]initWithString:@"12:45"];
+}
+
 - (nullable NSArray *)collectionView:(JSQMessagesCollectionView *)collectionView favoriteButtonImages:(NSIndexPath *)indexPath
 {
     return @[[UIImage imageNamed:@"ic_star_off"],[UIImage imageNamed:@"ic_star_on"]];
