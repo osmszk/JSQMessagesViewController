@@ -483,7 +483,7 @@
     if (indexPath.item % 3 == 0) {
         JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
         NSAttributedString *string = [[JSQMessagesTimestampFormatter sharedFormatter] attributedTimestampForDate:message.date];
-        return [self makeWhiteWithAttribute:string];
+        return [self makeWhite:[NSString stringWithFormat:@" %@　",[string string]]];
     }
     
     return nil;
@@ -584,6 +584,7 @@
         
         cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
                                               NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
+        cell.cellTopLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f];
     }
     
     return cell;
@@ -660,13 +661,13 @@
      */
     JSQMessage *currentMessage = [self.demoData.messages objectAtIndex:indexPath.item];
     if ([[currentMessage senderId] isEqualToString:self.senderId]) {
-        return 0.0f;
+        return 8.0f;
     }
     
     if (indexPath.item - 1 > 0) {
         JSQMessage *previousMessage = [self.demoData.messages objectAtIndex:indexPath.item - 1];
         if ([[previousMessage senderId] isEqualToString:[currentMessage senderId]]) {
-            return 0.0f;
+            return 8.0f;
         }
     }
     

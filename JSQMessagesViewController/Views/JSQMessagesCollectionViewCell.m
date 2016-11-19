@@ -122,6 +122,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.cellTopLabel.textAlignment = NSTextAlignmentCenter;
     self.cellTopLabel.font = [UIFont boldSystemFontOfSize:12.0f];
     self.cellTopLabel.textColor = [UIColor lightGrayColor];
+    self.cellTopLabel.layer.cornerRadius = 10;
+    self.cellTopLabel.clipsToBounds = YES;
 
     self.messageBubbleTopLabel.font = [UIFont systemFontOfSize:12.0f];
     self.messageBubbleTopLabel.textColor = [UIColor lightGrayColor];
