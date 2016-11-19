@@ -37,6 +37,7 @@
     
     self.title = @"JSQMessages";
 
+    self.collectionView.backgroundColor = [UIColor colorWithRed:112.0f/255.0f green:146.0f/255.0f blue:192.0f/255.0f alpha:1.0f];
     self.inputToolbar.contentView.textView.pasteDelegate = self;
     
     /**
@@ -315,9 +316,6 @@
     [self.delegateModal didDismissJSQDemoViewController:self];
 }
 
-
-
-
 #pragma mark - JSQMessagesViewController method overrides
 
 - (void)didPressSendButton:(UIButton *)button
@@ -484,7 +482,8 @@
      */
     if (indexPath.item % 3 == 0) {
         JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
-        return [[JSQMessagesTimestampFormatter sharedFormatter] attributedTimestampForDate:message.date];
+        NSAttributedString *string = [[JSQMessagesTimestampFormatter sharedFormatter] attributedTimestampForDate:message.date];
+        return [self makeWhiteWithAttribute:string];
     }
     
     return nil;
@@ -511,7 +510,7 @@
     /**
      *  Don't specify attributes to use the defaults.
      */
-    return [[NSAttributedString alloc] initWithString:message.senderDisplayName];
+    return [self makeWhite:message.senderDisplayName];
 }
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
@@ -522,15 +521,16 @@
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellSideBottomLabel:(NSIndexPath *)indexPath
 {
     if (indexPath.item % 3 == 1) {
-        return [[NSAttributedString alloc]initWithString:@"既読22"];
+        return [self makeWhite:@"既読22"];
     } else {
         return nil;
+        
     }
 }
 
 - (nullable NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTimeLabel:(NSIndexPath *)indexPath
 {
-    return [[NSAttributedString alloc]initWithString:@"12:45"];
+    return [self makeWhite:@"12:45"];
 }
 
 - (nullable NSArray *)collectionView:(JSQMessagesCollectionView *)collectionView favoriteButtonImages:(NSIndexPath *)indexPath
@@ -729,4 +729,18 @@
     return YES;
 }
 
+#pragma mark - Other Methods
+
+- (NSMutableAttributedString *)makeWhite:(NSString *)str {
+    NSAttributedString *string = [[NSAttributedString alloc] initWithString:str];
+    return [self makeWhiteWithAttribute:string];
+}
+
+- (NSMutableAttributedString *)makeWhiteWithAttribute:(NSAttributedString *)attrStr {
+    NSMutableAttributedString *stringNew = [[NSMutableAttributedString alloc] initWithAttributedString:attrStr];
+    [stringNew setAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]} range:NSMakeRange(0, stringNew.length)];
+    return stringNew;
+}
+
 @end
+
