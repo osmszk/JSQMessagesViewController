@@ -199,7 +199,10 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
 
 - (CGFloat)itemWidth
 {
-    return CGRectGetWidth(self.collectionView.frame) - self.sectionInset.left - self.sectionInset.right;
+    //osuzuki fix
+    //iPhone5なのにiPhone6のサイズで取得してしまう件
+//    return CGRectGetWidth(self.collectionView.frame) - self.sectionInset.left - self.sectionInset.right;
+    return [[UIScreen mainScreen]bounds].size.width - self.sectionInset.left - self.sectionInset.right;
 }
 
 - (UIDynamicAnimator *)dynamicAnimator
